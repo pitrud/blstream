@@ -2,12 +2,19 @@
 
 import UIKit
 
+
+//poniżej zamieszczam 3 kolejno stworzone klasy (każda następna w części implementuje poprzednie funkcjonalności)
+
+/*
+ZADANIE 1
+*/
+
 protocol DaSie {
     var czySieDa: Bool {get set}
 }
 
 class fiszki: CustomStringConvertible, DaSie {
-    var strona1:String = "aaa"
+    var strona1:String
     var strona2:String
     var czySieDa:Bool = false
     var podpowiedzi = [Int:Any]()//słownik
@@ -18,17 +25,24 @@ class fiszki: CustomStringConvertible, DaSie {
     }
     
     enum typPodpowiedzi {
+        
+        var oko = podpowiedzi
+        /*
+        towar_ue = Podpowiedz('Wyprodukowany w UE', obrazek)
+        dla_dzieci = Podpowiedz('Od 1 roku zycia', obrazek)
+        wz = 2
+        */
         case Obrazek
         case Text, Cyfra
         
-        func pokaz() -> Int {
+        func pokaz() {
             switch self {
             case .Obrazek:
-                return 0
+                var jaj = oddajTab(12)
             case .Text:
-                return 1
+                //return 1
             case .Cyfra:
-                return 2
+                //return 2
             
             }
         }
@@ -39,9 +53,13 @@ class fiszki: CustomStringConvertible, DaSie {
         self.strona2 = strona2
         self.podpowiedzi = podpowiedzi
     }
+    func oddajTab(kt:Int)->Any {
+        return (podpowiedzi[0])
+    }
+   
     
     func description( typek: typPodpowiedzi) -> String{
-        
+       var ok = oddajTab(3)
        // print("\()")
         return String(podpowiedzi[typek.pokaz()]!)
     }
@@ -53,3 +71,11 @@ let jfiszka = fiszki(strona1: "a", strona2: "b", podpowiedzi: [0: "aasas", 1:"st
 
 
 print("pod: \(jfiszka.description(.Cyfra))")
+
+
+
+
+
+
+
+
