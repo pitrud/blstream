@@ -21,7 +21,7 @@ class fiszki: CustomStringConvertible {
    
    //up ->CustomStringConvertible
     var description:String {
-        var tmp  = "Podowiedzi: "
+        var tmp  = "Strona1: \(strona1) -> Strona2: \(strona2) -> Podowiedzi: "
         for txt in podpowiedzi {
             tmp += ("\n \(txt)")
         }

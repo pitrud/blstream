@@ -63,7 +63,7 @@ class fiszki: CustomStringConvertible, CustomDebugStringConvertible {
     
     //CustomStringConvertible
     var description:String {
-        return "\(tmp_tekst)"
+        return "Strona1: \(strona1) -> Strona2: \(strona2) \((tmp_tekst==nil ? "" : "Podpowiedzi: \(tmp_tekst)"))"
     }
     //CustomDebugStringConvertible
     var debugDescription: String {
@@ -77,7 +77,7 @@ class fiszki: CustomStringConvertible, CustomDebugStringConvertible {
 }
 
 let jfiszka = fiszki(strona1: "a", strona2: "b", podpowiedzi: [0:"podpowiedź 1", 1:"podpowiedź 2", 2:12345])
-
+jfiszka
 jfiszka.wybierzTypOdpowiedzi(.cyferki)
 jfiszka.debugDescription
 jfiszka.description
